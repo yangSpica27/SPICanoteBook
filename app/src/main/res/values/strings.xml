@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">SPICa笔记</string>
+    <string name="home">主页</string>
+    <string name="note">笔记</string>
+    <string name="all_note">全部</string>
+    <string name="archive_note">已归档</string>
+    <string name="deleted_note">垃圾桶</string>
+    <string name="notebook">笔记本</string>
+    <string name="tag">标签</string>
+    <string name="add">创建新的笔记</string>
+    <string name="editor">编辑器</string>
+    <string name="title">标题</string>
 </resources>

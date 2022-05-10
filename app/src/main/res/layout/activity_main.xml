@@ -1,18 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:transitionGroup="true">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:layout_weight="1">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/fluentui_content_inset"
+                android:foreground="@drawable/ms_ripple_transparent_background"
+                android:paddingStart="@dimen/fluentui_content_inset"
+                android:paddingEnd="@dimen/fluentui_content_inset"
+                android:text="@string/note"
+                android:textAppearance="@style/TextAppearance.FluentUI.Heading"
+                android:textColor="@color/fluentui_gray_500" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/fluentui_content_inset"
+                android:drawablePadding="@dimen/fluentui_content_inset"
+                android:paddingStart="@dimen/fluentui_content_inset"
+                android:paddingEnd="@dimen/fluentui_content_inset"
+                android:text="@string/all_note"
+                android:textAppearance="@style/TextAppearance.FluentUI.Title2"
+                app:drawableStartCompat="@drawable/ic_mindmap_list" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/fluentui_content_inset"
+                android:drawablePadding="@dimen/fluentui_content_inset"
+                android:paddingStart="@dimen/fluentui_content_inset"
+                android:paddingEnd="@dimen/fluentui_content_inset"
+                android:text="@string/archive_note"
+                android:textAppearance="@style/TextAppearance.FluentUI.Title2"
+                app:drawableStartCompat="@drawable/ic_collect_files" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/fluentui_content_inset"
+                android:drawablePadding="@dimen/fluentui_content_inset"
+                android:paddingStart="@dimen/fluentui_content_inset"
+                android:paddingEnd="@dimen/fluentui_content_inset"
+                android:text="@string/deleted_note"
+                android:textAppearance="@style/TextAppearance.FluentUI.Title2"
+                app:drawableStartCompat="@drawable/ic_delete" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fluentui_divider_height"
+                android:layout_marginStart="@dimen/fluentui_content_inset"
+                android:layout_marginTop="@dimen/fluentui_content_inset"
+                android:layout_marginEnd="@dimen/fluentui_content_inset"
+                android:background="@drawable/ms_row_divider" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/fluentui_content_inset"
+                android:paddingStart="@dimen/fluentui_content_inset"
+                android:paddingEnd="@dimen/fluentui_content_inset"
+                android:text="@string/notebook"
+                android:textAppearance="@style/TextAppearance.FluentUI.Heading"
+                android:textColor="@color/fluentui_gray_500" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/fluentui_content_inset"
+                android:drawablePadding="@dimen/fluentui_content_inset"
+                android:paddingStart="@dimen/fluentui_content_inset"
+                android:paddingEnd="@dimen/fluentui_content_inset"
+                android:text="@string/all_note"
+                android:textAppearance="@style/TextAppearance.FluentUI.Title2"
+                app:drawableStartCompat="@drawable/ic_mindmap_list" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fluentui_divider_height"
+                android:layout_marginStart="@dimen/fluentui_content_inset"
+                android:layout_marginTop="@dimen/fluentui_content_inset"
+                android:layout_marginEnd="@dimen/fluentui_content_inset"
+                android:background="@drawable/ms_row_divider" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/fluentui_content_inset"
+                android:paddingStart="@dimen/fluentui_content_inset"
+                android:paddingEnd="@dimen/fluentui_content_inset"
+                android:text="@string/tag"
+                android:textAppearance="@style/TextAppearance.FluentUI.Heading"
+                android:textColor="@color/fluentui_gray_500" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/fluentui_content_inset"
+                android:drawablePadding="@dimen/fluentui_content_inset"
+                android:paddingStart="@dimen/fluentui_content_inset"
+                android:paddingEnd="@dimen/fluentui_content_inset"
+                android:text="@string/all_note"
+                android:textAppearance="@style/TextAppearance.FluentUI.Title2"
+                app:drawableStartCompat="@drawable/ic_tag_one" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fluentui_divider_height"
+                android:layout_marginStart="@dimen/fluentui_content_inset"
+                android:layout_marginTop="@dimen/fluentui_content_inset"
+                android:layout_marginEnd="@dimen/fluentui_content_inset"
+                android:background="@drawable/ms_row_divider" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <FrameLayout
+        android:id="@+id/layout_bottom"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal"
+        android:padding="@dimen/fluentui_content_inset">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.microsoft.fluentui.widget.Button
+            android:id="@+id/btn_create"
+            style="@style/Widget.FluentUI.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_plus"
+            android:drawablePadding="@dimen/fluentui_content_inset"
+            android:drawableTint="@color/fluentui_communication_blue"
+            android:text="@string/add" />
+
+    </FrameLayout>
+
+
+</LinearLayout>
+
