@@ -77,10 +77,11 @@ data class Note(
         entityColumn = "noteId",
     )
     val reminders: List<Reminder> = listOf(),
-) : Parcelable{
+) : Parcelable {
 
     fun isEmpty(): Boolean {
-        val baseCondition = title.isBlank() && attachments.isEmpty() && reminders.isEmpty() && tags.isEmpty()
+        val baseCondition =
+            title.isBlank() && attachments.isEmpty() && reminders.isEmpty() && tags.isEmpty()
         return when {
             isList -> baseCondition && taskList.isEmpty()
             else -> baseCondition && content.isBlank()

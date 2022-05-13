@@ -121,7 +121,7 @@ class EditActivity : BindingActivity<ActivityEditBinding>() {
 
             // Re-set text to notify the listener
             editTextContent.withOnlyTextWatcher<MarkwonEditorTextWatcher> {
-                setText(text)
+                text = text
             }
 
             editTextContent.isMarkdownEnabled = true

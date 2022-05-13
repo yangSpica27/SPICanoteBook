@@ -10,7 +10,8 @@ import me.spica.note.persistent.entity.NoteTask
 
 object DatabaseConverters {
     @TypeConverter
-    fun jsonFromAttachments(attachments: List<Attachment>): String = Json.encodeToString(attachments)
+    fun jsonFromAttachments(attachments: List<Attachment>): String =
+        Json.encodeToString(attachments)
 
     @TypeConverter
     fun attachmentsFromJson(json: String): List<Attachment> = Json.decodeFromString(json)

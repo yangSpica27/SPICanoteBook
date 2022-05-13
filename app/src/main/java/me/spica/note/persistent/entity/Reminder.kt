@@ -32,7 +32,7 @@ data class Reminder(
     val date: Long,
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0L,
-) : Parcelable{
+) : Parcelable {
 
 
     fun hasExpired(): Boolean {

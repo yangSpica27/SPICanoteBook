@@ -1,4 +1,5 @@
 @file:Suppress("unused")
+
 package me.spica.note.markwon
 
 import android.view.KeyEvent
@@ -104,13 +105,18 @@ val ExtendedEditText.addListItemListener: TextView.OnEditorActionListener
             val text = text ?: return@OnEditorActionListener true
             text.insert(selectionStart, "\n")
 
-            val previousLine = text.lines().getOrNull(currentLineIndex - 1) ?: return@OnEditorActionListener true
+            val previousLine =
+                text.lines().getOrNull(currentLineIndex - 1) ?: return@OnEditorActionListener true
 
             when {
-                previousLine.matches(Regex("-[ ]*\\[( |x)\\][ ]+.*")) -> text.insert(currentLineStartPos, "- [ ] ")
+                previousLine.matches(Regex("-[ ]*\\[( |x)\\][ ]+.*")) -> text.insert(
+                    currentLineStartPos,
+                    "- [ ] "
+                )
                 previousLine.matches(Regex("-[ ]+.*")) -> text.insert(currentLineStartPos, "- ")
                 previousLine.matches(Regex("[1-9]+[0-9]*[.][ ]+.*")) -> {
-                    val inc = Regex("[1-9]+[0-9]*").findAll(previousLine).first().value.toInt().inc()
+                    val inc =
+                        Regex("[1-9]+[0-9]*").findAll(previousLine).first().value.toInt().inc()
                     text.insert(currentLineStartPos, "$inc. ")
                 }
             }

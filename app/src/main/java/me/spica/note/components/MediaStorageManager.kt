@@ -12,8 +12,9 @@ class MediaStorageManager(
     private val context: Context,
     private val mediaFolder: String,
 ) {
-    private val directory get() = File(context.filesDir, mediaFolder)
-        .also { it.mkdir() }
+    private val directory
+        get() = File(context.filesDir, mediaFolder)
+            .also { it.mkdir() }
 
     fun listMediaFiles(): List<String> {
         return directory
@@ -35,7 +36,10 @@ class MediaStorageManager(
      *
      * @return The file's [Uri] and [File] objects.
      */
-    suspend fun createMediaFile(type: MediaType, extension: String = type.defaultExtension): Pair<Uri, File>? {
+    suspend fun createMediaFile(
+        type: MediaType,
+        extension: String = type.defaultExtension
+    ): Pair<Uri, File>? {
         return withContext(Dispatchers.IO) {
             runCatching {
                 val prefix = when (type) {
@@ -44,7 +48,11 @@ class MediaStorageManager(
                 }
 
                 val file = File.createTempFile(prefix, extension, directory)
-                FileProvider.getUriForFile(context, "${BuildConfig.APPLICATION_ID}.provider", file) to file
+                FileProvider.getUriForFile(
+                    context,
+                    "${BuildConfig.APPLICATION_ID}.provider",
+                    file
+                ) to file
             }.getOrNull()
         }
     }

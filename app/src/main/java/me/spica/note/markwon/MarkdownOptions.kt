@@ -16,7 +16,11 @@ class MarkdownOptions {
     var tableReplacement: () -> Node = { Code("...") }
 }
 
-inline fun Markwon.applyTo(textView: TextView, content: String, withOptions: MarkdownOptions.() -> Unit = {}) {
+inline fun Markwon.applyTo(
+    textView: TextView,
+    content: String,
+    withOptions: MarkdownOptions.() -> Unit = {}
+) {
     val options = MarkdownOptions()
     withOptions(options)
 
