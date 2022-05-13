@@ -24,6 +24,7 @@ import java.time.Instant
 )
 
 @Parcelize
+@kotlinx.serialization.Serializable
 data class Reminder(
     val name: String,
     @ColumnInfo(index = true)
@@ -31,9 +32,9 @@ data class Reminder(
     val date: Long,
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0L,
-) : Parcelable,Serializable {
+) : Parcelable{
 
-    @RequiresApi(Build.VERSION_CODES.O)
+
     fun hasExpired(): Boolean {
         val dateInstant = Instant.ofEpochSecond(date)
         return dateInstant.isBefore(Instant.now())

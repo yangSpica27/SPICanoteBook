@@ -18,6 +18,7 @@ import java.time.Instant
     ]
 )
 
+@kotlinx.serialization.Serializable
 data class NoteEntity(
     val title: String,
     val content: String,
@@ -38,9 +39,9 @@ data class NoteEntity(
     val notebookId: Long?,
     @PrimaryKey(autoGenerate = true)
     val id: Long,
-):Serializable
+)
 
-
+@kotlinx.serialization.Serializable
 @Parcelize
 data class Note(
     val title: String = "",
@@ -76,7 +77,7 @@ data class Note(
         entityColumn = "noteId",
     )
     val reminders: List<Reminder> = listOf(),
-) : Parcelable ,Serializable{
+) : Parcelable{
 
     fun isEmpty(): Boolean {
         val baseCondition = title.isBlank() && attachments.isEmpty() && reminders.isEmpty() && tags.isEmpty()

@@ -7,33 +7,109 @@
 
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:fillViewport="true">
 
         <LinearLayout
+            android:id="@+id/linear_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:clickable="true"
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:orientation="vertical">
 
-
-            <me.spica.note.widget.ExtendedEditText
-                android:id="@+id/et_title"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_attachments"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/fluentui_content_inset"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <me.spica.note.widget.ExtendedEditText
+                android:id="@+id/edit_text_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
                 android:background="@null"
                 android:hint="@string/title"
-                android:paddingHorizontal="@dimen/fluentui_content_inset"
                 android:scrollHorizontally="false"
-                android:textAppearance="@style/TextAppearance.FluentUI.Headline" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_view_title_preview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:gravity="top|start"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textIsSelectable="true"
+                android:visibility="gone" />
 
+            <me.spica.note.widget.ExtendedEditText
+                android:id="@+id/edit_text_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:gravity="top|start"
+                android:hint="@string/editor_hint_content"
+                android:padding="16dp"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_view_content_preview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:gravity="top|start"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textIsSelectable="true"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_tasks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:overScrollMode="never"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/action_add_task"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:drawablePadding="20dp"
+                android:gravity="start|center"
+                android:paddingHorizontal="22dp"
+                android:paddingVertical="12dp"
+                android:text="@string/action_add_task"
+                android:visibility="gone"
+                app:drawableStartCompat="@drawable/ic_plus" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_view_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:textStyle="italic" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/container_tags"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="16dp"
+                app:chipSpacingHorizontal="4dp"
+                app:chipSpacingVertical="8dp"
+                app:singleLine="false" />
         </LinearLayout>
-
 
     </androidx.core.widget.NestedScrollView>
 

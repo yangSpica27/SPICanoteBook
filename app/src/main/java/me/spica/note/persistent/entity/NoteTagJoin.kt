@@ -29,9 +29,10 @@ import java.io.Serializable
     ],
 )
 
+@kotlinx.serialization.Serializable
 data class NoteTagJoin(
     @ColumnInfo(index = true)
     val tagId: Long = 0L,
     @ColumnInfo(index = true)
     val noteId: Long = 0L
-):Serializable
+)

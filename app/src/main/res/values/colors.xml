@@ -1,2 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+
+    <color name="colorNoteText">#000000</color>
+    <color name="colorNoteIndicator">#B3000000</color>
+    <color name="colorAttachmentIndicator">#89000000</color>
+    <color name="colorTaskDone">#80000000</color>
+    <color name="colorMarkdownTask">#80000000</color>
+    <color name="colorMediaControlsBackground">#CC000000</color>
+
+    <color name="colorTaskSwipe">#CCF44336</color>
+    <color name="colorHighlightMask">#1F000000</color>
+    <color name="window_background">#f1f1f1</color>
+    <color name="colorNoteDefault">#FFFFFF</color>
+    <color name="colorNoteGreen">#C5E1A5</color>
+    <color name="colorNotePink">#F48FB1</color>
+    <color name="colorNoteBlue">#81D4FA</color>
+    <color name="colorNoteRed">#EF9A9A</color>
+    <color name="colorNoteOrange">#FFAB91</color>
+    <color name="colorNoteYellow">#FFF59D</color>
+</resources>

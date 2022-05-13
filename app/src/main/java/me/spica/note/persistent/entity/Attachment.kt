@@ -8,12 +8,13 @@ import java.io.Serializable
  * 附件
  */
 @Parcelize
+@kotlinx.serialization.Serializable
 data class Attachment(
     val type: Type = Type.IMAGE,
     val path: String = "",
     val description: String = "",
     val fileName: String = "",
-) : Parcelable, Serializable {
+) : Parcelable {
 
     enum class Type { AUDIO, IMAGE, VIDEO, GENERIC }
 

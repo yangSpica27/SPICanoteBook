@@ -6,6 +6,7 @@ plugins {
     id 'kotlin-parcelize'
     id 'kotlin-kapt'
     id 'AndResGuard'
+    id 'kotlinx-serialization'
 }
 
 android {
@@ -13,7 +14,7 @@ android {
 
     defaultConfig {
         applicationId "me.spica.note"
-        minSdk 25
+        minSdk 26
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -76,8 +77,22 @@ dependencies {
     implementation 'com.google.dagger:hilt-android:2.41'
     kapt 'com.google.dagger:hilt-compiler:2.41'
 
+    // markwon
+    def markwon_version = '4.6.2'
+    implementation "io.noties.markwon:core:$markwon_version"
+    implementation "io.noties.markwon:editor:$markwon_version"
+    implementation "io.noties.markwon:linkify:$markwon_version"
+    implementation "io.noties.markwon:ext-strikethrough:$markwon_version"
+    implementation "io.noties.markwon:ext-tables:$markwon_version"
+    implementation "io.noties.markwon:ext-tasklist:$markwon_version"
+    implementation "me.saket:better-link-movement-method:2.2.0"
+
     // 图片加载
-    implementation("io.coil-kt:coil:1.4.0")
+    def coil_version = '1.4.0'
+//    implementation("io.coil-kt:coil:1.4.0")
+    implementation "io.coil-kt:coil:$coil_version"
+    implementation "io.coil-kt:coil-video:$coil_version"
+    implementation "io.coil-kt:coil-gif:$coil_version"
 
     def roomVersion = "2.4.1"
     implementation("androidx.room:room-runtime:$roomVersion")
@@ -111,18 +126,18 @@ dependencies {
     implementation "androidx.startup:startup-runtime:1.1.1"
     implementation 'com.drakeet.multitype:multitype:4.3.0'
 
-    // Preference MMKV
-    implementation 'com.tencent:mmkv-static:1.2.12'
-
-    //Json解析
-    implementation 'com.squareup.moshi:moshi-kotlin:1.13.0'
-    kapt 'com.squareup.moshi:moshi-kotlin-codegen:1.13.0'
-
-    //network 网络请求相关
-    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.5'
-    implementation "com.squareup.retrofit2:retrofit:2.9.0"
-    implementation "com.squareup.retrofit2:converter-moshi:2.9.0"
-    implementation 'com.github.skydoves:sandwich:1.2.3'
+//    // Preference MMKV
+//    implementation 'com.tencent:mmkv-static:1.2.12'
+//
+//    //Json解析
+//    implementation 'com.squareup.moshi:moshi-kotlin:1.13.0'
+//    kapt 'com.squareup.moshi:moshi-kotlin-codegen:1.13.0'
+//
+//    //network 网络请求相关
+//    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.5'
+//    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+//    implementation "com.squareup.retrofit2:converter-moshi:2.9.0"
+//    implementation 'com.github.skydoves:sandwich:1.2.3'
 
 
     implementation "com.github.fondesa:recycler-view-divider:3.5.0"
@@ -140,6 +155,8 @@ dependencies {
     implementation 'com.microsoft.fluentui:FluentUIAndroid:0.0.31'
     implementation 'com.jakewharton.threetenabp:threetenabp:1.1.0'
     implementation 'com.splitwise:tokenautocomplete:2.0.8'
+
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2"
 
 }
 

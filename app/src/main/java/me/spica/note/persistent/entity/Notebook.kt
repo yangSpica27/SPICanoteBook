@@ -13,9 +13,10 @@ import java.io.Serializable
  */
 @Entity(tableName = "notebooks")
 @Parcelize
+@kotlinx.serialization.Serializable
 data class Notebook(
     @ColumnInfo(name = "notebookName")
     val name: String,
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0L
-) : Parcelable,Serializable
+) : Parcelable
